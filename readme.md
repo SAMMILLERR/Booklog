@@ -14,10 +14,10 @@ A minimal Express + Mongoose application demonstrating basic **Create**, **Read*
 **Book Schema**
 ```js
 {
-  Title:       { type: String, required: true, trim: true },
-  Author:      { type: String, required: true, trim: true },
-  Qty:         { type: Number, required: true, min: 0 },
-  Description: { type: String, required: true, trim: true }
+  Title:       { type: String, required: true,  },
+  Author:      { type: String, required: true, },
+  Qty:         { type: Number, required: true, },
+  Description: { type: String, required: true, }
 }
 ````
 
@@ -126,8 +126,10 @@ Open `index.html` in your browser to use the interface.
 
 ## 📸 Screenshots
 
-* Front-End UI: `images/frontend.png`
-* Architecture Diagram: `images/diagram.png`
+* Front-End UI: `![image](https://github.com/user-attachments/assets/150b7f69-055f-4e93-bff7-fe6599fd21c9)
+`
+* Architecture Diagram: `![image](https://github.com/user-attachments/assets/fbaa6a55-9867-4879-b1d9-30b4cf1b38b5)
+`
 
 ---
 
