@@ -127,10 +127,10 @@ Open `index.html` in your browser to use the interface.
 ## 📸 Screenshots
 
 * Front-End UI:
- ![image](https://github.com/user-attachments/assets/150b7f69-055f-4e93-bff7-fe6599fd21c9)
+*![image](https://github.com/user-attachments/assets/150b7f69-055f-4e93-bff7-fe6599fd21c9)
 
 * Architecture Diagram:
-  ![image](https://github.com/user-attachments/assets/fbaa6a55-9867-4879-b1d9-30b4cf1b38b5)
+*![image](https://github.com/user-attachments/assets/fbaa6a55-9867-4879-b1d9-30b4cf1b38b5)
 
 
 ---
