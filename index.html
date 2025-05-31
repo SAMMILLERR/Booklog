@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+  <title>BOOKLOG</title>
+  <style>
+ 
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1, h2 {
+      margin-bottom: 0.5rem;
+    }
+    .book-card {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.75rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .book-info {
+      flex: 1;
+    }
+    .book-info h3 {
+      margin: 0 0 0.25rem 0;
+      font-size: 1.2rem;
+    }
+    .book-info p {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
+    }
+    .actions button {
+      margin-left: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .actions button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .actions button.delete-btn {
+      background-color: #dc3545;
+    }
+    .actions button.edit-btn {
+      background-color: #ffc107;
+      color: black;
+    }
+    form > div {
+      margin-bottom: 0.5rem;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.4rem;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    form button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #28a745;
+      color: white;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    #message {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    /* Edit‐mode overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .overlay .edit-form-container {
+      background: white;
+      padding: 1rem;
+      border-radius: 4px;
+      width: 400px;
+      max-width: 90%;
+    }
+    .overlay .edit-form-container h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+
+  <h1>BOOKLOG</h1>
+  <div id="message"></div>
+
+ 
+  <section id="books">
+    <h2>All Books</h2>
+    <div id="books-container">
+ 
+    </div>
+  </section>
+
+  <section id="take">
+    <h2>Add / Take In a Book</h2>
+    <form id="add-book-form">
+      <div>
+        <label for="title">Title:</label><br/>
+        <input type="text" id="title" name="Title" required />
+      </div>
+      <div>
+        <label for="author">Author:</label><br/>
+        <input type="text" id="author" name="Author" required />
+      </div>
+      <div>
+        <label for="qty">Quantity to Add:</label><br/>
+        <input type="number" id="qty" name="Qty" min="1" step="1" required />
+      </div>
+      <div>
+        <label for="description">Description (only if new):</label><br/>
+        <textarea id="description" name="Description" rows="2"></textarea>
+      </div>
+      <button type="submit">Add / Take In Book</button>
+    </form>
+  </section>
+
+
+  <div class="overlay" id="edit-overlay">
+    <div class="edit-form-container">
+      <h2>Edit Book</h2>
+      <form id="edit-book-form">
+        <input type="hidden" id="edit-id" name="id" />
+        <div>
+          <label for="edit-title">Title:</label><br/>
+          <input type="text" id="edit-title" name="Title" required />
+        </div>
+        <div>
+          <label for="edit-author">Author:</label><br/>
+          <input type="text" id="edit-author" name="Author" required />
+        </div>
+        <div>
+          <label for="edit-qty">Quantity:</label><br/>
+          <input type="number" id="edit-qty" name="Qty" min="0" step="1" required />
+        </div>
+        <div>
+          <label for="edit-description">Description:</label><br/>
+          <textarea id="edit-description" name="Description" rows="2" required></textarea>
+        </div>
+        <button type="submit">Save Changes</button>
+        <button type="button" id="edit-cancel-btn">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js">
+   
+  </script>
+</body>
+</html>
